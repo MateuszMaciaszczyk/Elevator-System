@@ -3,13 +3,13 @@ import java.util.Queue;
 import java.util.UUID;
 
 class Elevator {
-    UUID id;
+    int id;
     int currentFloor;
     int targetFloor;
     Queue<Integer> targets;
 
     public Elevator(int id, int currentFloor) {
-        this.id = UUID.randomUUID();
+        this.id = id;
         this.currentFloor = currentFloor;
         this.targetFloor = currentFloor;
         this.targets = new LinkedList<>();
@@ -38,7 +38,7 @@ class Elevator {
     }
 
     public String status() {
-        return String.format("(%s, %d, %d)", id.toString(), currentFloor, targetFloor);
+        return String.format("(%d, %d, %d)", id, currentFloor, targetFloor);
     }
 
     public boolean isIdle() {
